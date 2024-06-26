@@ -1,0 +1,31 @@
+<div class="search-container" [formGroup]="searchForm">
+  <input type="text" class="search-input" placeholder="Enter City" formControlName="city">
+  <button class="search-button" (click)="searchWeather()">Search</button>
+</div>
+
+<div class="content" *ngIf="weather">
+<div class="row">
+  <div class="image-container">
+    <img [src]="imageUrl" alt="Weather image">
+  </div>
+  <div class="temperature">
+    {{weather.temp}} °C
+  </div>
+</div>
+
+<div class="row">
+  <div class="section-2">
+    <div class="top-info">
+      <p>Expected temperature in {{weather.city}} : {{weather.expected_temp}}C</p>
+    </div>
+  <div class="bottom-info">
+    <div class="info-box">
+      <p>Humidity: {{weather.humidity}}</p>
+    </div>
+    <div class="info-box">
+      <p>Wind Speed: {{weather.wind}} </p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
